@@ -1,5 +1,17 @@
 package homepage.database;
 
+/**
+ * DBInfo
+ * @author anders
+ * The storage of database login information, 
+ * this is being used by DBAccess to determine which server to log into.
+ * 
+ * Change the int "whichserver" to change which of the listed servers you wish to log into.
+ * whichserver:
+ * 1 - Localhost
+ * 2 - not defined
+ * 3 - not defined 
+ */
 public class DBInfo {
 	private String DBHost;
 	private int DBPort;
@@ -16,6 +28,21 @@ public class DBInfo {
 			this.DBUserName = "root";
 			this.DBPassword = "";
 		}
+		if (this.whichserver == 2){
+			this.DBHost = "DB_Host";
+			this.DBPort = 0000;
+			this.DBDatabase = "DB_name";
+			this.DBUserName = "DB_UserName";
+			this.DBPassword = "DB_Password";
+		}
+		if (this.whichserver == 3){
+			this.DBHost = "DB_Host";
+			this.DBPort = 0000;
+			this.DBDatabase = "DB_name";
+			this.DBUserName = "DB_userName";
+			this.DBPassword = "DB_Password";
+		}
+		
 
 	}
 
