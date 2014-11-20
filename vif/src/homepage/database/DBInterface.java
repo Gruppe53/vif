@@ -22,9 +22,10 @@ public class DBInterface {
 	 * @return 1 - if succes, 0 - if not succes
 	 */
 	public int createUser(String f_name, String l_name, String email, String birth, int phone, String address, int zip, String city, String nation, boolean public_mail, String password){		
-
+		int i = 0;
+		
 		try{
-			DBA.doSqlUpdate("CREATE ");
+			i = DBA.doSqlUpdate("INSERT INTO users VALUES ('" + f_name + "', '" + l_name + "', '" + email + "', '" + birth + "', " + phone + ", '" + address + "', " + zip + ", '" + city + "', '" + nation + "', " + public_mail + ", '" + password + "')");
 			DBA.closeSql();
 		}
 		catch(Exception e){
@@ -32,7 +33,90 @@ public class DBInterface {
 		};
 
 
-		return 1;
+		return i;
+	}
+	
+	public int createWishes(int fk_f_id, String fk_tp_id){		
+		int i = 0;
+		try{
+			i = DBA.doSqlUpdate("INSERT INTO wishes VALUES (" + fk_f_id + ", '" + fk_tp_id + "')");
+			DBA.closeSql();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		};
+
+
+		return i;
+	}
+
+	public int createUserlevel(String email, int fk_ul_id){		
+		int i = 0;
+		try{
+			i = DBA.doSqlUpdate("INSERT INTO user_level VALUES ('" + email + "', " + fk_ul_id + ")");
+			DBA.closeSql();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		};
+
+
+		return i;
+	}
+	
+	public int createTimeperiods(String tp_id, String startT, String endT){		
+		int i = 0;
+		
+		try{
+			i = DBA.doSqlUpdate("INSERT INTO timeperiods VALUES ('" + tp_id + "', '" + startT + "', '" + endT + "')");
+			DBA.closeSql();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		};
+
+
+		return i;
+	}
+	
+	public int createLevels(int ul_id, int level, String description){		
+		int i = 0;
+		
+		try{
+			i = DBA.doSqlUpdate("INSERT INTO levels VALUES (" + ul_id + ", " + level + ", '" + description + "')");
+			DBA.closeSql();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		};
+
+
+		return i;
+	}
+	
+	public int createForm(int f_id, String fk_email, boolean prePar, boolean workCamp, String comment){		
+		int i = 0;
+		int prePar_int = 0;
+		int workCamp_int = 0;
+		
+		if(prePar == true){
+			prePar_int = 1;
+		}
+		
+		if(workCamp == true){
+			workCamp_int = 1;
+		}
+		
+		try{
+			i = DBA.doSqlUpdate("INSERT INTO form VALUES (" + f_id + ", '" + fk_email + "', " + prePar_int + ", '" + workCamp_int + "', '" + comment + "')");
+			DBA.closeSql();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		};
+
+
+		return i;
 	}
 	
 	public ResultSet getUser(String email){
