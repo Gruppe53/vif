@@ -5,7 +5,7 @@ public class DBInterface {
 
 	/**
 	 * createUser
-	 * @param f_name - Firstnames and middelnames
+	 * @param f_name - Firstname and middelnames
 	 * @param l_name - Lastnames
 	 * @param email - Email address
 	 * @param birth - birthdate format: "yyyy-mm-dd"
@@ -21,7 +21,7 @@ public class DBInterface {
 	public int createUser(String f_name, String l_name, String email, String birth, int phone, String address, int zip, String city, String nation, boolean public_mail, String password){		
 
 		try{
-			DBA.doSqlUpdate("");
+			DBA.doSqlUpdate("CREATE ");
 			DBA.closeSql();
 		}
 		catch(Exception e){
@@ -31,4 +31,8 @@ public class DBInterface {
 
 		return 1;
 	}
+	
+	//Få fat i årstallet
+	//SELECT DISTINCT YEAR(startT) FROM users NATURAL JOIN form NATURAL JOIN wishes NATURAL JOIN timeperiods WHERE YEAR(startT) IN (SELECT MAX(YEAR(StartT)) FROM timeperiods)
+	
 }
