@@ -1,7 +1,10 @@
 package homepage.database;
 
+import java.sql.*;
+
 public class DBInterface {
 	DBAccess DBA = new DBAccess();
+	private ResultSet resultSet = null;
 
 	/**
 	 * createUser
@@ -30,6 +33,31 @@ public class DBInterface {
 
 
 		return 1;
+	}
+	
+	public ResultSet getUser(String email){
+		
+		try{
+			resultSet = DBA.doSqlQuery("SELECT DISTINCT * FROM users WHERE email='" + email +"'");
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		
+		return resultSet;
+	}
+	
+	public ResultSet getForm(String email, int year){
+		try{
+			resultSet = DBA.doSqlQuery("SELECT DISTINCT * FROM users WHERE ");
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		
+		return resultSet;
 	}
 	
 	//Få fat i årstallet
