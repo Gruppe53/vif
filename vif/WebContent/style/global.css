@@ -1,0 +1,212 @@
+@CHARSET "utf-8";
+
+/* TAG STYLES */
+* {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+body {
+	/*background: #E3EDED url(../image/siteBg.png) repeat-x;*/
+	color: #333;
+	font: 12px Arial, Verdana;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+td {
+	vertical-align: text-top;
+}
+
+/* IDs */
+#topBar {
+	width: 100%;
+	height: 60px;
+	background: #004040;
+}
+
+#main {
+	width: 801px;
+	min-height: 750px;
+	background: #FFF;
+	margin: -60px auto 50px auto;
+}
+
+#logo {
+	width: 140px;
+	height: 100px;
+	float: left;
+	background: #003333;
+}
+
+#topMenu {
+	width: 661px;
+	height: 60px;
+	float: left;
+	background: #004040;
+}
+
+#subMenu {
+	width: 581px;
+	height: 40px;
+	background: #333;
+	float: left;
+}
+
+#controlPanel {
+	width: 80px;
+	height: 40px;
+	background: #333;
+	float: left;
+}
+
+#content {
+	width: 801px;
+	min-height: 500px;
+}
+
+#contentHeader {
+	width: 801px;
+	float: left;
+	margin: 25px 0px 15px 0px;
+}
+
+#contentLeft {
+	width: 430px;
+	border-right: #CCC dashed 1px;
+	float: left;
+	margin: 0px 20px 0px 0px;
+	padding: 0px 20px 0px 0px;
+}
+
+#contentRight {
+	width: 330px;
+	float: left;
+}
+
+#contentCenter {
+	width: 801px;
+	float: left;
+}
+
+#foot {
+	width: 100%;
+	height: 120px;
+	background: #004040;
+	color: #FFFFFF;
+}
+
+#footContent {
+	width: 801px;
+	font-size: 100%;
+	margin: 0px auto;
+}
+
+#footContentLeft {
+	width: 390px;
+	height: 90px;
+	float: left;
+	padding: 20px 0px 0px 0px;
+}
+
+#footContentRight {
+	width: 390px;
+	height: 90px;
+	float: left;
+	padding: 20px 0px 0px 0px;
+}
+
+/* CLASSs */
+.topMenuLink {
+	min-width: 5px;
+	height: 40px;
+	color: #FFF;
+	cursor: pointer;
+	float: left;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 10px 0px 10px;
+}
+.topMenuLink:hover {
+	color: #E55715;
+}
+
+.subMenuLink {
+	min-width: 5px;
+	height: 27px;
+	color: #FFF;
+	cursor: pointer;
+	float: left;
+	font-size: 130%;
+	font-weight: bold;
+	text-align: center;
+	padding: 13px 10px 0px 10px;
+}
+.subMenuLink:hover {
+	color: #FFF;
+	background: #E55715;
+}
+
+.controlPanelLink {
+	width: 80px;
+	height: 25px;
+	color: #999;
+	cursor: pointer;
+	float: left;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0px 0px 0px;
+}
+.controlPanelLink:hover {
+	background: #EEE;
+}
+
+.frontLink {
+	background: #333;
+	color: #FFF;
+	cursor: pointer;
+	float: right;
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0px 0px 5px 10px;
+	padding: 7px 9px 7px 9px;
+}
+.frontLink:hover {
+	background: #E55715;
+}
+
+/* PSEUDOs */
+#content p, h1, h2 {
+	margin-bottom: 10px;
+}
+#content h2 {
+	border-bottom: #CCC 1px dashed;
+}
+
+#content a {
+	color: #E55715;
+}
+
+#content img {
+	float: right;
+}
+
+#content table {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+#foot a {
+	color: #FFF;
+}
+
+#li {
+	list-style-type: square;
+}
