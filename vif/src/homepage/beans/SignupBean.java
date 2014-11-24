@@ -7,7 +7,7 @@ public class SignupBean {
 	private String password;
 	private String fname;
 	private String lname;
-	private Date birthday;
+	private String birthday;
 	private String phone;
 	private String address;
 	private String zip;
@@ -39,10 +39,10 @@ public class SignupBean {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 	public String getPhone() {

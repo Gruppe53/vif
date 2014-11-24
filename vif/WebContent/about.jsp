@@ -1,12 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@include file="head.jsp"%>
+<%@include file="menu.jsp"%>
+        <div id="content">
+        	<div id="contentHeader">
+            	<h1>Alt om Vindinge Støtteforening</h1>
+            </div>
+            <div id="contentCenter">
+            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu consequat elit, nec imperdiet enim. Aenean placerat id ipsum vel aliquam. Praesent ex sapien, porta consectetur orci in, dapibus porta velit. Donec a nulla ornare, aliquam risus quis, vulputate mi.</p>
+            	<h2>Morbi a dolor pulvinar pulvinar quam</h2>
+                <img src="image/testImg.png" alt="Dummy" />
+                <p>Nulla elementum pretium imperdiet. Maecenas tempor metus in elit vehicula, sit amet molestie enim condimentum. Etiam a viverra erat, in hendrerit nunc. Sed dictum iaculis tortor eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at lectus vel risus iaculis sollicitudin a eu sem. Nam in eleifend leo. Morbi vestibulum ex at tellus molestie rutrum. Sed ornare leo eget urna finibus accumsan. Nulla facilisi. Nulla gravida nibh est, tincidunt hendrerit risus vulputate nec. In a nisi in leo efficitur condimentum.</p>
+                <p>Nullam porttitor rutrum ante, non facilisis leo congue in. Duis facilisis leo at placerat lobortis. Duis venenatis laoreet posuere. Morbi quis dignissim lectus, vitae accumsan justo. Praesent porta pellentesque orci, et tincidunt quam semper ornare. Vivamus vel nisl id ligula ullamcorper gravida. Duis a pellentesque urna. Donec pulvinar mi eget nulla porttitor, eget bibendum eros fermentum. Cras pulvinar non ipsum viverra mollis.</p>
+                <p>Nulla elementum pretium imperdiet. Maecenas tempor metus in elit vehicula, sit amet molestie enim condimentum. Etiam a viverra erat, in hendrerit nunc. Sed dictum iaculis tortor eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at lectus vel risus iaculis sollicitudin a eu sem. Nam in eleifend leo. Morbi vestibulum ex at tellus molestie rutrum. Sed ornare leo eget urna finibus accumsan. Nulla facilisi. Nulla gravida nibh est, tincidunt hendrerit risus vulputate nec. In a nisi in leo efficitur condimentum.</p>
+                <img src="image/testImg.png" alt="Dummy" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu consequat elit, nec imperdiet enim. Aenean placerat id ipsum vel aliquam. Praesent ex sapien, porta consectetur orci in, dapibus porta velit. Donec a nulla ornare, aliquam risus quis, vulputate mi. Aenean pharetra commodo enim, quis vulputate arcu imperdiet ut. Nam eu massa eu est congue aliquam ut et erat. Maecenas vitae orci at nulla porttitor lacinia. Mauris nisi quam, feugiat non libero nec, tempus venenatis leo. Nam ac suscipit mi. Aliquam vestibulum leo nec tortor cursus fringilla. Maecenas quis consequat ipsum. In hac habitasse platea dictumst. Ut ipsum dolor, venenatis quis mauris quis, molestie malesuada dui. Maecenas laoreet, nibh at consequat laoreet, diam nibh sollicitudin velit, id luctus tortor arcu at erat. Nam laoreet vitae mi eget tristique. Aliquam enim tellus, sodales sit amet velit nec, posuere maximus ipsum. Nulla facilisi. Cras ut lobortis arcu. Maecenas fermentum venenatis ante, at gravida tellus tincidunt vel. Sed vitae feugiat enim, ac efficitur quam. Nunc ut mattis lectus. Nam augue orci, pharetra eget mauris eget, suscipit rutrum ante. Aliquam maximus, neque gravida ultricies vehicula, orci sem convallis purus, a dictum quam ipsum sit amet ipsum. Pellentesque tempor justo et luctus ornare.</p>
+            </div>
+        </div>
+<%@include file="foot.jsp"%>
