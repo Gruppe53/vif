@@ -20,12 +20,14 @@ public class DBAccess {
 	
 	private DBInfo dbinfo = new DBInfo();
 	
+	private static DBAccess instans = new DBAccess();
+	
 	/**
 	 * DBAccess Constructor
 	 * Sets the variables DBHost, DBPort, DBDatabase, DBUserName and DBPassword,
 	 * to the info stored in DBInfo
 	 */
-	public DBAccess() {
+	private DBAccess() {
 		
 		this.DBHost = dbinfo.getDBHost();
 		this.DBPort = dbinfo.getDBPort();
@@ -33,6 +35,10 @@ public class DBAccess {
 		this.DBUserName = dbinfo.getDBUserName();
 		this.DBPassword = dbinfo.getDBPassword();
 		
+	}
+	
+	public static DBAccess getConnection() {
+		return instans;
 	}
 	
 	/**

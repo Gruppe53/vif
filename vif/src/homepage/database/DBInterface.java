@@ -3,9 +3,13 @@ package homepage.database;
 import java.sql.*;
 
 public class DBInterface {
-	DBAccess DBA = new DBAccess();
+	private static DBAccess DBA;
 	private ResultSet resultSet = null;
 
+	public static void main(String [ ] args){
+		DBA = DBAccess.getConnection();
+	}
+	
 	/**
 	 * createUser
 	 * @param f_name - Firstname and middelnames
