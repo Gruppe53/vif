@@ -83,6 +83,9 @@ public class DBAccess {
 	public void closeSqlNonRS() throws SQLException {
 		this.statement.close();
 		this.connect.close();
+		this.connect					= null;
+		this.statement					= null;
+		this.resultSet					= null;
 	}
 	
 	/**
@@ -95,5 +98,8 @@ public class DBAccess {
 		this.resultSet.close();
 		this.statement.close();
 		this.connect.close();
+		this.connect					= null;
+		this.statement					= null;
+		this.resultSet					= null;
 	}
 }
