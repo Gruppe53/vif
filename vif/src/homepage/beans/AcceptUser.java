@@ -26,6 +26,7 @@ public class AcceptUser {
 		// Links should be: 
 		// <a href="?acceptuser=getEmailFromDb">
 		// <a href="?deleteuser=getEmailFromDb">
+		// If list is empty, print "Ingen nye brugertilmeldinger."
 		out.write("<tr>");
 		out.write("<td>Email</td>");
 		out.write("<td>Navn</td>");
