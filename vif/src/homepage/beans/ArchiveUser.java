@@ -3,11 +3,11 @@ package homepage.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchiveUserBean {
+public class ArchiveUser {
 	private List<String[]> userList = new ArrayList<String[]>();
 	private String[] userInfo = new String[9];
 	
-	public ArchiveUserBean() {
+	public ArchiveUser() {
 	}
 	
 	public List<String[]> getUserList() {

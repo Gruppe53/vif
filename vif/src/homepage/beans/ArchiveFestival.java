@@ -1,10 +1,10 @@
 package homepage.beans;
 
-public class ArchiveFestivalBean {
+public class ArchiveFestival {
 	private String year;
 	private boolean active;
 	
-	public ArchiveFestivalBean() {
+	public ArchiveFestival() {
 	}
 
 	public String getYear() {

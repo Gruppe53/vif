@@ -182,6 +182,16 @@ td {
 	background: #E55715;
 }
 
+.maxTable {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+.shiftingTable {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
 /* PSEUDOs */
 #content p, h1, h2 {
 	margin-bottom: 10px;
@@ -198,10 +208,6 @@ td {
 	float: right;
 }
 
-#content table {
-	border-collapse: separate;
-	border-spacing: 10px;
-}
 
 #foot a {
 	color: #FFF;
@@ -209,4 +215,28 @@ td {
 
 #li {
 	list-style-type: square;
+}
+
+.shiftingTable tr:first-child {
+	background: #004040;
+	font-weight: bold;
+	border-bottom: 1px solid #333;
+}
+.shiftingTable tr:nth-child(even) {
+	background: #FAFFFA;
+	border-bottom: 1px solid #333;
+}
+.shiftingTable tr:nth-child(odd) {
+	background: #FFF;
+	border-bottom: 1px solid #333;
+}
+.shiftingTable tr:last-child {
+	border-bottom: none;
+}
+.shiftingTable td {
+	border-left: 1px solid #333;
+	padding: 3px;
+}
+.shiftingTable td:first-child {
+	border-left: none;
 }

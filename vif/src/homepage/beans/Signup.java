@@ -1,6 +1,6 @@
 package homepage.beans;
 
-public class SignupBean {
+public class Signup {
 	private String email;
 	private String repeat_email;
 	private String password;
@@ -15,7 +15,7 @@ public class SignupBean {
 	private String nation;
 	private boolean public_email;
 	
-	public SignupBean() {
+	public Signup() {
 	}
 	
 	public boolean createUser() {

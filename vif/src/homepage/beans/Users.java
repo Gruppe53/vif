@@ -2,11 +2,11 @@ package homepage.beans;
 
 import java.util.*;
 
-public class UsersBean {
+public class Users {
 	private List<String[]> userList = new ArrayList<String[]>();
 	private String[] userInfo = new String[10];
 	
-	public UsersBean() {
+	public Users() {
 	}
 
 	public List<String[]> getUserList() {
