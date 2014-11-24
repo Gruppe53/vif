@@ -12,31 +12,15 @@ public class DBAccess {
 	private Statement statement					= null;
 	private ResultSet resultSet					= null;
 	
-	private String DBHost;
-	private int DBPort;
-	private String DBDatabase;
-	private String DBUserName;
-	private String DBPassword;
-	
-	private DBInfo dbinfo = new DBInfo();
-	
+	private final String DBHost = DBInfo.DB_HOST;
+	private final int DBPort = DBInfo.DB_PORT;
+	private final String DBDatabase = DBInfo.DB_DATABASE;
+	private final String DBUserName = DBInfo.DB_USERNAME;
+	private final String DBPassword = DBInfo.DB_PASSWORD;
+
 	private static DBAccess instans = new DBAccess();
 	
-	/**
-	 * DBAccess Constructor
-	 * Sets the variables DBHost, DBPort, DBDatabase, DBUserName and DBPassword,
-	 * to the info stored in DBInfo
-	 */
-	private DBAccess() {
 		
-		this.DBHost = dbinfo.getDBHost();
-		this.DBPort = dbinfo.getDBPort();
-		this.DBDatabase = dbinfo.getDBDatabase();
-		this.DBUserName = dbinfo.getDBUserName();
-		this.DBPassword = dbinfo.getDBPassword();
-		
-	}
-	
 	public static DBAccess getConnection() {
 		return instans;
 	}
@@ -99,6 +83,9 @@ public class DBAccess {
 	public void closeSqlNonRS() throws SQLException {
 		this.statement.close();
 		this.connect.close();
+		this.connect					= null;
+		this.statement					= null;
+		this.resultSet					= null;
 	}
 	
 	/**
@@ -111,5 +98,8 @@ public class DBAccess {
 		this.resultSet.close();
 		this.statement.close();
 		this.connect.close();
+		this.connect					= null;
+		this.statement					= null;
+		this.resultSet					= null;
 	}
 }
