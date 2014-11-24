@@ -6,7 +6,9 @@
 <%
 	if(signup.validateData())
 		if(signup.createUser())
-			// TODO - Redirect user to a page which confirms creation.
+			// TODO - Redirect user to a page which confirms creation. Maybe just a popup.
+			// Maybe the user should be allowed to log in, 
+			// but get a message which denies any control before being accepted.
 %>
 
 <%@include file="head.jsp"%>
