@@ -1,4 +1,4 @@
-package homepage;
+package homepage.pages;
 
 public class Signup {
 	public Signup() {
