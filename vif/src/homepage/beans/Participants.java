@@ -2,11 +2,11 @@ package homepage.beans;
 
 import java.util.*;
 
-public class ParticipantsBean {
+public class Participants {
 	private List<String[]> partList = new ArrayList<String[]>();
 	private String[] partInfo = new String[9];
 	
-	public ParticipantsBean() {
+	public Participants() {
 	}
 
 	public List<String[]> getPartList() {

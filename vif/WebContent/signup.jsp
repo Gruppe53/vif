@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<jsp:useBean id="signup" class="homepage.beans.SignupBean" />
+<jsp:useBean id="signup" class="homepage.beans.Signup" />
 <jsp:setProperty property="*" name="signup" />
 
 <%

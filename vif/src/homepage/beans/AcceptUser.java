@@ -2,10 +2,8 @@ package homepage.beans;
 
 import java.io.*;
 
-public class AcceptUserBean {
-	private String email;
-	
-	public AcceptUserBean() {
+public class AcceptUser {	
+	public AcceptUser() {
 	}
 	
 	public boolean acceptUser(String email) {
@@ -64,13 +62,5 @@ public class AcceptUserBean {
 		out.write("<td>Nej</td>");
 		out.write("<td><a href=\"#\">y</a> | <a href=\"#\">n</a></td>");
 		out.write("</tr>");
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 }

@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" import="java.io.*"%>
 
-<jsp:useBean id="users" class="homepage.beans.AcceptUserBean"></jsp:useBean>
+<jsp:useBean id="users" class="homepage.beans.AcceptUser"></jsp:useBean>
 <jsp:setProperty property="*" name="users" />
 
 <%
