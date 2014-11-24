@@ -14,8 +14,6 @@
 <%@include file="head.jsp"%>
 <%@include file="menu.jsp"%>
 
-Indsend tilmelding
-
 <div id="content">
 <div id="contentHeader">
    	<h1>Velkommen til Vindinge Støtteforening</h1>
@@ -25,7 +23,7 @@ Indsend tilmelding
    	<h2>Tilmeldingsformular</h2>
        <p>Bemærk at <em>alle</em> felter skal udfyldes!</p>
        <form action="" method="post">
-       	<table>
+       	<table class="maxTable">
            	<tr>
                	<td><label for="email">Email</label></td>
                    <td><input id="email" name="email" type="email" /></td>
