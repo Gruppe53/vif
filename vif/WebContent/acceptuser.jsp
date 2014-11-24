@@ -4,11 +4,14 @@
 <jsp:setProperty property="*" name="users" />
 
 <%
-	if(!request.getParameter("acceptuser").isEmpty())
-		users.acceptUser(request.getParameter("acceptuser"));
+	String accept = (String) request.getParameter("acceptuser");
+	String delete = (String) request.getParameter("deleteuser");
+
+	if(accept != null)
+		users.acceptUser(accept);
 		
-	if(!request.getParameter("deleteuser").isEmpty())
-		users.acceptUser(request.getParameter("deleteuser"));
+	if(delete != null)
+		users.deleteUser(delete);
 %>
 
 <%@include file="head.jsp"%>

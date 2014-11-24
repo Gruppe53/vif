@@ -1,12 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" import="java.io.*"%>
 
-</body>
-</html>
+<jsp:useBean id="users" class="homepage.beans.Users"></jsp:useBean>
+<jsp:setProperty property="*" name="users" />
+
+<%
+	String delete = (String) request.getParameter("deleteuser");
+		
+	if(delete != null)
+		users.deleteUser(delete);
+%>
+<%@include file="head.jsp"%>
+<%@include file="menu.jsp"%>
+
+<div id="content">
+	<div id="contentHeader">
+    	<h1>Brugere</h1>
+    </div>
+    <div id="contentCenter">
+    	<h2>Brugerliste</h2>
+    	<table class="shiftingTable">
+    		<%
+    			try {
+    				users.createUserList(out);
+    			} catch(IOException e) {
+    				%>
+    					<tr><td>Fejl ved indlæsning af data fra databasen.</td></tr>
+    				<%
+    			}
+    		%>
+    	</table>
+    </div>
+    </div>
+</div>
+<%@include file="foot.jsp"%>

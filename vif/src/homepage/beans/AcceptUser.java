@@ -7,16 +7,20 @@ public class AcceptUser {
 	}
 	
 	public boolean acceptUser(String email) {
+		System.out.println(email);
 		// TODO
 		// If clicking accept (y) -> create instance of db conn
 		// Update user to active/accepted
+		// Return true if succeeding with sql update, false otherwise
 		return false;
 	}
 	
 	public boolean deleteUser(String email) {
+		System.out.println(email);
 		// TODO
 		// If clicking delete (n) -> create instance of db conn
 		// Delete user
+		// Return true if succeeding with sql delete, false otherwise
 		return false;
 	}
 	
