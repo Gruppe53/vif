@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>Vindinge Støtteforening</display-name>
   <welcome-file-list>
-    <welcome-file>front</welcome-file>
+    <welcome-file>front.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>VifServlet</servlet-name>
@@ -20,10 +20,6 @@
       <param-value>jdbc:mysql://localhost:3306/vif</param-value>
     </init-param>
   </servlet>
-  <servlet-mapping>
-  	<servlet-name>VifServlet</servlet-name>
-  	<url-pattern>/test/</url-pattern>
-  </servlet-mapping>
   <description>Vindinge Støtteforenings tilmeldingsside</description>
   <session-config>
   	<session-timeout>15</session-timeout></session-config>

@@ -1,10 +1,18 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
+<jsp:useBean id="signup" class="homepage.beans.SignupBean" />
+<jsp:setProperty property="*" name="signup" />
+
+<%
+	if(signup.validateData())
+		if(signup.createUser())
+			// TODO - Redirect user to a page which confirms creation.
+%>
+
 <%@include file="head.jsp"%>
 <%@include file="menu.jsp"%>
 
-<jsp:useBean id="signup" class="homepage.beans.SignupBean" />
-<jsp:setProperty property="*" name="signup" />
+Indsend tilmelding
 
 <div id="content">
 <div id="contentHeader">

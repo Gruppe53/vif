@@ -2,7 +2,9 @@ package homepage.beans;
 
 public class SignupBean {
 	private String email;
+	private String repeat_email;
 	private String password;
+	private String repeat_password;
 	private String fname;
 	private String lname;
 	private String birthday;
@@ -13,14 +15,44 @@ public class SignupBean {
 	private String nation;
 	private boolean public_email;
 	
+	public SignupBean() {
+	}
+	
+	public boolean createUser() {
+		// TODO
+		// If validated -> create instance of db connection
+		// Convert bena data to corresponding db type and send data to db connection and let it work
+		// db connection should return true or false - return this to jsp-page.
+		return true;
+	}
+	
+	public boolean validateData() {
+		// TODO
+		// Validate current fields.
+		// Return true if successfull, otherwise false. As long as validateData returns false createUser can't be run.
+		return false;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getRepeat_email() {
+		return repeat_email;
+	}
+	public void setRepeat_email(String repeat_email) {
+		this.repeat_email = repeat_email;
+	}
 	public String getPassword() {
 		return password;
+	}
+	public String getRepeat_password() {
+		return repeat_password;
+	}
+	public void setRepeat_password(String repeat_password) {
+		this.repeat_password = repeat_password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
