@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>vif</display-name>
+  <display-name>Vindinge Støtteforening</display-name>
   <welcome-file-list>
     <welcome-file>front</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>vif</servlet-name>
+    <servlet-name>VifServlet</servlet-name>
     <servlet-class>homepage.servlets.VifServlet</servlet-class>
     <init-param>
       <param-name>dbUser</param-name>
@@ -21,7 +21,10 @@
     </init-param>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>vif</servlet-name>
-  	<url-pattern>/*</url-pattern>
+  	<servlet-name>VifServlet</servlet-name>
+  	<url-pattern>/test/</url-pattern>
   </servlet-mapping>
+  <description>Vindinge Støtteforenings tilmeldingsside</description>
+  <session-config>
+  	<session-timeout>15</session-timeout></session-config>
 </web-app>
