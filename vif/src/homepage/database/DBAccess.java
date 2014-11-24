@@ -29,11 +29,11 @@ public class DBAccess {
 	 */
 	private DBAccess() {
 		
-		this.DBHost = dbinfo.getDBHost();
-		this.DBPort = dbinfo.getDBPort();
-		this.DBDatabase = dbinfo.getDBDatabase();
-		this.DBUserName = dbinfo.getDBUserName();
-		this.DBPassword = dbinfo.getDBPassword();
+		this.DBHost = dbinfo.DB_HOST;
+		this.DBPort = dbinfo.DB_PORT;
+		this.DBDatabase = dbinfo.DB_DATABASE;
+		this.DBUserName = dbinfo.DB_USERNAME;
+		this.DBPassword = dbinfo.DB_PASSWORD;
 		
 	}
 	
