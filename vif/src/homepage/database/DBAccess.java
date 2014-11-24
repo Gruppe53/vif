@@ -12,11 +12,11 @@ public class DBAccess {
 	private Statement statement					= null;
 	private ResultSet resultSet					= null;
 	
-	private static final String DBHost = DBInfo.DB_HOST;
-	private static final int DBPort = DBInfo.DB_PORT;
-	private static final String DBDatabase = DBInfo.DB_DATABASE;
-	private static final String DBUserName = DBInfo.DB_USERNAME;
-	private static final String DBPassword = DBInfo.DB_PASSWORD;
+	private final String DBHost = DBInfo.DB_HOST;
+	private final int DBPort = DBInfo.DB_PORT;
+	private final String DBDatabase = DBInfo.DB_DATABASE;
+	private final String DBUserName = DBInfo.DB_USERNAME;
+	private final String DBPassword = DBInfo.DB_PASSWORD;
 
 	private static DBAccess instans = new DBAccess();
 	
