@@ -12,31 +12,15 @@ public class DBAccess {
 	private Statement statement					= null;
 	private ResultSet resultSet					= null;
 	
-	private String DBHost;
-	private int DBPort;
-	private String DBDatabase;
-	private String DBUserName;
-	private String DBPassword;
-	
-	private DBInfo dbinfo = new DBInfo();
-	
+	private static final String DBHost = DBInfo.DB_HOST;
+	private static final int DBPort = DBInfo.DB_PORT;
+	private static final String DBDatabase = DBInfo.DB_DATABASE;
+	private static final String DBUserName = DBInfo.DB_USERNAME;
+	private static final String DBPassword = DBInfo.DB_PASSWORD;
+
 	private static DBAccess instans = new DBAccess();
 	
-	/**
-	 * DBAccess Constructor
-	 * Sets the variables DBHost, DBPort, DBDatabase, DBUserName and DBPassword,
-	 * to the info stored in DBInfo
-	 */
-	private DBAccess() {
 		
-		this.DBHost = dbinfo.DB_HOST;
-		this.DBPort = dbinfo.DB_PORT;
-		this.DBDatabase = dbinfo.DB_DATABASE;
-		this.DBUserName = dbinfo.DB_USERNAME;
-		this.DBPassword = dbinfo.DB_PASSWORD;
-		
-	}
-	
 	public static DBAccess getConnection() {
 		return instans;
 	}
