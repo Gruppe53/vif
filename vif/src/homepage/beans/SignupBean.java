@@ -23,7 +23,7 @@ public class SignupBean {
 		// If validated -> create instance of db connection
 		// Convert bena data to corresponding db type and send data to db connection and let it work
 		// db connection should return true or false - return this to jsp-page.
-		return true;
+		return false;
 	}
 	
 	public boolean validateData() {
