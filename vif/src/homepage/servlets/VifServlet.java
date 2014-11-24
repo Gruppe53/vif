@@ -1,7 +1,9 @@
 package homepage.servlets;
 
 import homepage.database.DBManager;
+
 import java.io.IOException;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +24,6 @@ public class VifServlet extends HttpServlet {
 
     	
 		ServletContext context = config.getServletContext();
-		context.setAttribute("base", config.getInitParameter("base"));
-		context.setAttribute("imgUrl", config.getInitParameter("imgUrl"));
 		context.setAttribute("dbManager", dba);
     }
 

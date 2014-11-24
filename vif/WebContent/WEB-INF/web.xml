@@ -2,11 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>vif</display-name>
   <welcome-file-list>
-    <welcome-file>front.jsp</welcome-file>
+    <welcome-file>front</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>vif</servlet-name>
-    <servlet-class>VifServlet</servlet-class>
+    <servlet-class>homepage.servlets.VifServlet</servlet-class>
     <init-param>
       <param-name>dbUser</param-name>
       <param-value>root</param-value>
@@ -19,13 +19,9 @@
       <param-name>dbUrl</param-name>
       <param-value>jdbc:mysql://localhost:3306/vif</param-value>
     </init-param>
-    <init-param>
-      <param-name>base</param-name>
-      <param-value>/vif/front</param-value>
-    </init-param>
-    <init-param>
-      <param-name>imgUrl</param-name>
-      <param-value>/vif/image/</param-value>
-    </init-param>
   </servlet>
+  <servlet-mapping>
+  	<servlet-name>vif</servlet-name>
+  	<url-pattern>/*</url-pattern>
+  </servlet-mapping>
 </web-app>

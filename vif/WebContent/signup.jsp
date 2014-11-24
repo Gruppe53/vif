@@ -1,8 +1,11 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<jsp:useBean id="signup" class="homepage.beans.SignupBean" />
-<jsp:setProperty property="*" name="signup" />
+
 <%@include file="head.jsp"%>
 <%@include file="menu.jsp"%>
+
+<jsp:useBean id="signup" class="homepage.beans.SignupBean" />
+<jsp:setProperty property="*" name="signup" />
+
 <div id="content">
 <div id="contentHeader">
    	<h1>Velkommen til Vindinge Støtteforening</h1>
@@ -35,7 +38,7 @@
                <tr>
                	<td><label for="birthday">Fødselsdato</label></td>
                    <td><input id="birthday" name="birthday" type="date" /></td>
-                   <td style="color: #999;">Vælg din fødselsdato. Brug enten kalenderen eller indtast manuelt.</td>
+                   <td style="color: #999;">Vælg din fødselsdato. Brug enten kalenderen eller indtast manuelt (yyyy-mm-dd.)</td>
                </tr>
                <tr>
                	<td><label for="country">Land</label></td>
@@ -309,16 +312,16 @@
                </tr>
                <tr>
                	<td><label for="password">Kodeord</label></td>
-                   <td><input id="password" name="password" type="text" /></td>
+                   <td><input id="password" name="password" type="password" /></td>
                    <td style="color: #999;" rowspan="2">Vælg et kodeord. Kodeordet skal bruges, når du logger på og skal vælge vagttidspunkter. Skal bruges igen, hvis du vil tilmelde dig igen næste år.</td>
                </tr>
                <tr>
                	<td><label for="password_repeat">Gentag kodeord</label></td>
-                   <td><input id="password_repeat" name="password_repeat" type="text" /></td>
+                   <td><input id="password_repeat" name="password_repeat" type="password" /></td>
                </tr>
                <tr>
-               	<td><label for="">Synlig mail?</label></td>
-                   <td><input id="" name="" type="checkbox" /></td>
+               	<td><label for="public_email">Synlig mail?</label></td>
+                   <td><input id="public_email" name="public_email" type="checkbox" /></td>
                    <td style="color: #999;">Sæt kryds, hvis du gerne vil have din email adresse synlig på medarbejderlisten (det er <em>kun</em> medarbejdere af madboden, der ser denne liste.)</td>
                 </tr>
                 <tr>
@@ -329,3 +332,5 @@
         </form>
     </div>
 </div>
+
+<%@include file="foot.jsp"%>

@@ -1,7 +1,5 @@
 package homepage.beans;
 
-import java.util.Date;
-
 public class SignupBean {
 	private String email;
 	private String password;
