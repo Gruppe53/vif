@@ -7,23 +7,23 @@ import java.sql.*;
  * @author anders
  * The class you need to import if you need your class to get or set information in the database.
  */
-public class DBAccess {
-	private Connection connect					= null;
+public abstract class DBAccess {
+	private static Connection connect					= null;
 	private Statement statement					= null;
 	private ResultSet resultSet					= null;
-	
-	private final String DBHost = DBInfo.DB_HOST;
-	private final int DBPort = DBInfo.DB_PORT;
-	private final String DBDatabase = DBInfo.DB_DATABASE;
-	private final String DBUserName = DBInfo.DB_USERNAME;
-	private final String DBPassword = DBInfo.DB_PASSWORD;
 
-	private static DBAccess instans = new DBAccess();
+	private static DBAccess instans;
 	
+	abstract public Users getUser(String email) throws Exception;	
+	
+	synchronized public static DBAccess getConnection() throws Exception{
+		if (instans != null) return instans;
 		
-	public static DBAccess getConnection() {
+		instans = new DBOracle();
+		
 		return instans;
 	}
+	
 	
 	/**
 	 * doSqlQuery
@@ -35,13 +35,8 @@ public class DBAccess {
 	 * @throws SQLException
 	 */
 	public ResultSet doSqlQuery(String query) throws Exception, SQLException {
-		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			
-			connect = DriverManager.getConnection("jdbc:mysql://" + DBHost + ":" + DBPort + "/" + DBDatabase, DBUserName, DBPassword);
-			
-			statement = connect.createStatement();
-			resultSet = statement.executeQuery(query);
+		try {			
+			resultSet = statement.executeQuery(query); //TODO DBAccess: tror der er fejl her ?
 
 			return resultSet;
 		}
@@ -61,11 +56,6 @@ public class DBAccess {
 	 */
 	public int doSqlUpdate(String query) throws Exception, SQLException {
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			
-			connect = DriverManager.getConnection("jdbc:mysql://" + DBHost + ":" + DBPort + "/" + DBDatabase, DBUserName, DBPassword);
-			
-			statement = connect.createStatement();
 
 			return statement.executeUpdate(query);
 		}
@@ -83,9 +73,9 @@ public class DBAccess {
 	public void closeSqlNonRS() throws SQLException {
 		this.statement.close();
 		this.connect.close();
-		this.connect					= null;
-		this.statement					= null;
-		this.resultSet					= null;
+//		this.connect					= null;
+//		this.statement					= null;
+//		this.resultSet					= null;
 	}
 	
 	/**
@@ -98,8 +88,8 @@ public class DBAccess {
 		this.resultSet.close();
 		this.statement.close();
 		this.connect.close();
-		this.connect					= null;
-		this.statement					= null;
-		this.resultSet					= null;
+//		this.connect					= null;
+//		this.statement					= null;
+//		this.resultSet					= null;
 	}
 }

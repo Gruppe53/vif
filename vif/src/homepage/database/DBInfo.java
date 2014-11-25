@@ -9,7 +9,7 @@ package homepage.database;
 public class DBInfo {
 	public static final String DB_HOST = "localhost";
 	public static final int DB_PORT = 3306;
-	public static final String DB_DATABASE = "DB_name";
+	public static final String DB_DATABASE = "vif";
 	public static final String DB_USERNAME = "root";
 	public static final String DB_PASSWORD = "";
 }

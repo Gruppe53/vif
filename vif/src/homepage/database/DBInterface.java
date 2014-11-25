@@ -2,13 +2,35 @@ package homepage.database;
 
 import java.sql.*;
 
-public class DBInterface {
-	private static DBAccess DBA;
+public class DBInterface extends DBAccess{
+	DBAccess DBA;
 	private ResultSet resultSet = null;
 
-	public static void main(String [ ] args){
-		DBA = DBAccess.getConnection();
+//	public static void main(String [ ] args){
+//		try { 
+//			DBAccess DBA = DBAccess.getConnection();
+//		} catch(Exception e){
+//			System.out.println("Error has occured: " + e);
+//		}
+//	}
+	
+public Users getUser(String email){
+		resultSet = null;
+		Users user = null;
+		try{
+			DBA = DBAccess.getConnection();
+			resultSet = DBA.doSqlQuery("SELECT DISTINCT * FROM users WHERE email='" + email +"'");
+			
+			while (resultSet.next()){
+				user = new Users(resultSet.getString("email"), resultSet.getString("f_name"), resultSet.getString("l_name"), resultSet.getString("birth"), resultSet.getString("phone"), resultSet.getString("address"), resultSet.getString("zip"), resultSet.getString("city"), resultSet.getString("nation"), resultSet.getInt("public_email"), resultSet.getString("password"), resultSet.getInt("active"), resultSet.getInt("fk_u_level_id"));
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		return user;
 	}
+	
 	
 	/**
 	 * createUser
@@ -123,18 +145,18 @@ public class DBInterface {
 		return i;
 	}
 	
-	public ResultSet getUser(String email){
-		
-		try{
-			resultSet = DBA.doSqlQuery("SELECT DISTINCT * FROM users WHERE email='" + email +"'");
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
-		
-		
-		return resultSet;
-	}
+//	public ResultSet getUser(String email){
+//		
+//		try{
+//			resultSet = DBA.doSqlQuery("SELECT DISTINCT * FROM users WHERE email='" + email +"'");
+//		}
+//		catch(Exception e){
+//			System.out.println(e);
+//		}
+//		
+//		
+//		return resultSet;
+//	}
 	
 	public ResultSet getForm(String email, int year){
 		try{
