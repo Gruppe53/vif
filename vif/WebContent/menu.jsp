@@ -15,6 +15,16 @@
             <div class="subMenuLink" onclick="location='procedure.jsp';">Tilmeldingsprocedure</div>
             <div class="subMenuLink" onclick="location='signup.jsp';">Tilmelding</div>
         </div>
-        <div id="controlPanel">
-        	<div class="controlPanelLink">Log på</div>
+        <div style="float: right; width: 100px; height: 80px;">
+        	<nav>
+	        	<ul>
+	        		<li><a href="#">Kontrolpanel</a>
+	        			<ul>
+	        				<li><a href="users.jsp">Brugere</a></li>
+	        				<li><a href="participants.jsp">Vagtplan</a></li>
+	        				<li><a href="archive.jsp">Arkiv</a></li>
+	        			</ul>
+	        		</li>
+	        	</ul>
+        	</nav>
         </div>

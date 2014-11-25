@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style/global.css">
+<link rel="stylesheet" href="style/dropdown.css">
 <title>Vindinge Støtteforening</title>
 <script type="text/javascript">
 	var datefield = document.createElement("input");
