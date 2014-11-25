@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style/global.css">
+<title>Vindinge Støtteforening</title>
+<script type="text/javascript" src="script/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="script/jquery.validate.min.js"></script>
+<script type="text/javascript" src="script/jquery.form.js"></script>
+<script type="text/javascript" src="script/jquery.mackjax.js"></script>
+</head>
+<body>
+    <h1>Rediger bruger</h1>
+    <table class="maxTable">
+           	<tr>
+               	<td><label for="fname">Fornavn</label></td>
+                <td><input id="fname" name="fname" type="text" /></td>
+                <td style="color: #999;">Indtast for- og eventuelle mellemnavne.</td>
+            </tr>
+            <tr>
+               	<td><label for="lname">Efternavn</label></td>
+                <td><input id="lname" name="lname" type="text" /></td>
+                <td style="color: #999;">Indtast efternavn.</td>
+            </tr>
+            <tr>
+               	<td><label for="birthday">Fødselsdato</label></td>
+                <td><input id="birthday" name="birthday" type="date" /></td>
+                <td style="color: #999;"><em>Skal</em> være på formatet yyyy-mm-dd, hvis man indtaster manuelt.</td>
+            </tr>
+			<tr>
+				<td><label for="address">Adresse</label></td>
+			    <td><input id="address" name="address" type="text" /></td>
+			    <td style="color: #999;">Skriv dit gadenavn og -nummer - eventuelt etage og side/dørnummer.</td>
+			</tr>
+			<tr>
+				<td><label for="zip">Post nr.</label></td>
+			    <td><input id="zip" name="zip" type="text" /></td>
+			    <td style="color: #999;">Skriv dit postnummer.</td>
+			</tr>
+			<tr>
+				<td><label for="city">By</label></td>
+			    <td><input id="city" name="city" type="text" /></td>
+			    <td style="color: #999;">Skriv bynavn.</td>
+			</tr>
+			<tr>
+				<td><label for="password">Kodeord</label></td>
+			    <td><input id="password" name="password" type="password" /></td>
+			    <td style="color: #999;" rowspan="2">Vælg et kodeord. Kodeordet skal bruges, når du logger på og skal vælge vagttidspunkter. Skal bruges igen, hvis du vil tilmelde dig igen næste år.</td>
+			</tr>
+			<tr>
+				<td><label for="password_repeat">Gentag kodeord</label></td>
+			    <td><input id="password_repeat" name="password_repeat" type="password" /></td>
+			</tr>
+			<tr>
+				<td><input name="submit" type="submit" value="Opdater bruger" /></td>
+			    <td rowspan="2"><input type="reset" value="Nulstil" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
