@@ -8,10 +8,55 @@
 <script type="text/javascript" src="script/jquery.validate.min.js"></script>
 <script type="text/javascript" src="script/jquery.form.js"></script>
 <script type="text/javascript" src="script/jquery.mackjax.js"></script>
+<script>
+$("document").ready(function(){
+	$("form#updateUser").validate({
+		rules: {
+			fname: {
+				required: true
+			},
+			lname: {
+				required:true
+			},
+			birthday: {
+			     required: true
+		    },
+		    address: {
+			     required: true
+		    },
+		    zip: {
+			     required: true,
+		    	 maxlength: 10
+		    },
+		    city: {
+			     required: true
+		    },
+		    password: {
+			     required: true,
+		     	minlength: 6
+		    },
+		    password_repeat: {
+			     required: true,
+			     minlength: 6,
+			     equalTo: "#password"
+		    }
+		   }
+		   })
+		   jQuery.extend(jQuery.validator.messages, {
+			    required: "Dette felt skal udfyldes.",
+			    email: "Indtast venligst en korrekt email-adresse.",
+			    date: "Indtast venligst en korrekt dato.",
+			    equalTo: "Dette felt skal være lig det ovenstående felt.",
+			    minlength: jQuery.validator.format("Indtast venligst mindst {0} tegn.")
+			});
+
+});
+</script>
 </head>
 <body>
     <h1>Rediger bruger</h1>
-    <table class="maxTable">
+    <form id="updateUser" action="" method="post">
+    	<table class="maxTable">
            	<tr>
                	<td><label for="fname">Fornavn</label></td>
                 <td><input id="fname" name="fname" type="text" /></td>

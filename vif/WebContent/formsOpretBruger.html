@@ -10,7 +10,7 @@
 <script type="text/javascript" src="script/jquery.mackjax.js"></script>
 <script>
 $("document").ready(function(){
-	   $("form").validate({
+	   $("form#createUser").validate({
 	   rules: {
 	   	 email: {
 	   		required: true,
@@ -57,13 +57,14 @@ $("document").ready(function(){
 		    email: "Indtast venligst en korrekt email-adresse.",
 		    date: "Indtast venligst en korrekt dato.",
 		    equalTo: "Dette felt skal være lig det ovenstående felt.",
+		    minlength: jQuery.validator.format("Indtast venligst mindst {0} tegn.")
 		});
-	  });
+});
 </script>
 </head>
 <body>
 	<h1>Opret bruger</h1>
-	<form action="" method="post">
+	<form id="createUser" action="" method="post">
 		<table class="maxTable">
 			<tr>
 				<td><label for="email">Email</label></td>
