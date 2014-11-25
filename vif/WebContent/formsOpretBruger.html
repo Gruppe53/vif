@@ -8,6 +8,16 @@
 <script type="text/javascript" src="script/jquery.validate.min.js"></script>
 <script type="text/javascript" src="script/jquery.form.js"></script>
 <script type="text/javascript" src="script/jquery.mackjax.js"></script>
+<script>
+$("document").ready(function(){
+	  $("form").validate()
+	  rules: {
+		  email_repeat: {
+			  equalTo: "#email"
+		  }
+	  }
+	 })
+</script>
 </head>
 <body>
 	<h1>Opret bruger</h1>
@@ -15,26 +25,26 @@
         <table class="maxTable">
             <tr>
                 <td><label for="email">Email</label></td>
-                <td><input id="email" name="email" type="email" /></td>
+                <td><input id="email" name="email" type="email" class="required" /></td>
                 <td rowspan="2" style="color: #999;">Indtast din email adresse. Email vil bruges til at logge på senere, og eventuelt til senere festivaller, hvor du også gerne vil hjælpe til i madboden.</td>
             </tr>
             <tr>
                 <td><label for="email_repeat">Gentag email</label></td>
-                <td><input id="email_repeat" name="email_repeat" type="email" /></td>
+                <td><input id="email_repeat" name="email_repeat" type="email" class="required" /></td>
             </tr>
             <tr>
                 <td><label for="fname">Fornavn</label></td>
-                <td><input id="fname" name="fname" type="text" /></td>
+                <td><input id="fname" name="fname" type="text" class="required" /></td>
                 <td style="color: #999;">Skriv dine for- og eventuelle mellemnavne.</td>
             </tr>
             <tr>
                 <td><label for="lname">Efternavn</label></td>
-                <td><input id="lname" name="lname" type="text" /></td>
+                <td><input id="lname" name="lname" type="text" class="required" /></td>
                 <td style="color: #999;">Skriv dit efternavn.</td>
             </tr>
             <tr>
                 <td><label for="birthday">Fødselsdato</label></td>
-                <td><input id="birthday" name="birthday" type="date" /></td>
+                <td><input id="birthday" name="birthday" type="date" class="required" /></td>
                 <td style="color: #999;">Vælg din fødselsdato. Brug enten kalenderen eller indtast manuelt (yyyy-mm-dd.)</td>
             </tr>
             <tr>
@@ -295,27 +305,27 @@
             </tr>
             <tr>
                 <td><label for="address">Adresse</label></td>
-                <td><input id="address" name="address" type="text" /></td>
+                <td><input id="address" name="address" type="text" class="required" /></td>
                 <td style="color: #999;">Skriv dit gadenavn og -nummer - eventuelt etage og side/dørnummer.</td>
             </tr>
             <tr>
                 <td><label for="zip">Post nr.</label></td>
-                <td><input id="zip" name="zip" type="text" /></td>
+                <td><input id="zip" name="zip" type="text" class="required" /></td>
                 <td style="color: #999;">Skriv dit postnummer.</td>
             </tr>
             <tr>
                 <td><label for="city">By</label></td>
-                <td><input id="city" name="city" type="text" /></td>
+                <td><input id="city" name="city" type="text" class="required" /></td>
                 <td style="color: #999;">Skriv bynavn.</td>
             </tr>
             <tr>
                 <td><label for="password">Kodeord</label></td>
-                <td><input id="password" name="password" type="password" /></td>
+                <td><input id="password" name="password" type="password" class="required" /></td>
                 <td style="color: #999;" rowspan="2">Vælg et kodeord. Kodeordet skal bruges, når du logger på og skal vælge vagttidspunkter. Skal bruges igen, hvis du vil tilmelde dig igen næste år.</td>
             </tr>
             <tr>
                 <td><label for="password_repeat">Gentag kodeord</label></td>
-                <td><input id="password_repeat" name="password_repeat" type="password" /></td>
+                <td><input id="password_repeat" name="password_repeat" type="password" class="required" /></td>
             </tr>
             <tr>
                 <td><label for="public_email">Synlig mail?</label></td>
