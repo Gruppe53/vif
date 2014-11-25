@@ -49,4 +49,15 @@ public abstract class Users {
 		// Return true if succeeding with sql update, false otherwise
 		return false;
 	}
+	
+	public boolean removeBid(String email) {
+		System.out.println(email);
+		// TODO
+		// If clicking remove bid -> create instance of db conn
+		// Remove bid AND related wishes
+		// Return true if succeeding with sql delete, false otherwise (turn off autocommit and run
+		// both sql deletes. If one fails, both fails!)
+		
+		return false;
+	}
 }

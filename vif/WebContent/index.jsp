@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@include file="head.jsp"%>
-<%@include file="menu.jsp"%>
-<%@include file="front.jsp"%>
-<%@include file="foot.jsp"%>
+<%
+	String redirectURL = "front.jsp";
+	response.sendRedirect(redirectURL);
+%>
