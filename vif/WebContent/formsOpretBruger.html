@@ -10,47 +10,45 @@
 <script type="text/javascript" src="script/jquery.mackjax.js"></script>
 <script>
 $("document").ready(function(){
-	   $("form#createUser").validate({
-	   rules: {
-	   	 email: {
-	   		required: true,
-	   		email: true
-	    },
-	    email_repeat: {
-	     	required: true,
-	     	equalTo: "#email"
-	    },
-	    fname: {
-	     	required: true,
-	     	minlength: 2
-	    },
-	    lname: {
-	     	required: true,
-	    	 minlength: 2
-	    },
-	    birthday: {
-		     required: true
-	    },
-	    address: {
-		     required: true
-	    },
-	    zip: {
-		     required: true,
-	    	 maxlength: 10
-	    },
-	    city: {
-		     required: true
-	    },
-	    password: {
-		     required: true,
-	     	minlength: 6
-	    },
-	    password_repeat: {
-		     required: true,
-		     minlength: 6,
-		     equalTo: "#password"
-	    }
-	   }
+	$("form#createUser").validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			email_repeat: {
+		     	required: true,
+		     	equalTo: "#email"
+	   		},
+	    	fname: {
+				required: true
+			},
+			lname: {
+				required:true
+			},
+			birthday: {
+		   		required: true
+	    	},
+	    	address: {
+		    	required: true
+	    	},
+	    	zip: {
+		    	required: true,
+	    		maxlength: 10
+	    	},
+	    	city: {
+		    	required: true
+	    	},
+	    	password: {
+		    	required: true,
+	     		minlength: 6
+	    	},
+	    	password_repeat: {
+		    	required: true,
+		    	minlength: 6,
+		    	equalTo: "#password"
+	    	}
+	   	}
 	   })
 	   jQuery.extend(jQuery.validator.messages, {
 		    required: "Dette felt skal udfyldes.",
