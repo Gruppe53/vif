@@ -46,7 +46,7 @@
     				newUsers.createUserList(out);
     			} catch(IOException e) {
     				%>
-    					<tr><td>Fejl ved indlæsning af data fra databasen.</td></tr>
+    					<tr><td>Fejl ved udskrivning af data.</td></tr>
     				<%
     			}
     		%>
@@ -59,7 +59,7 @@
     				users.createUserList(out);
     			} catch(IOException e) {
     				%>
-    					<tr><td>Fejl ved indlæsning af data fra databasen.</td></tr>
+    					<tr><td>Fejl ved udskrivning af data.</td></tr>
     				<%
     			}
     		%>
@@ -72,7 +72,7 @@
     				iaUsers.createUserList(out);
     			} catch(IOException e) {
     				%>
-    					<tr><td>Fejl ved indlæsning af data fra databasen.</td></tr>
+    					<tr><td>Fejl ved udskrivning af data.</td></tr>
     				<%
     			}
     		%>

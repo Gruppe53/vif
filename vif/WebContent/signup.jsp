@@ -1,12 +1,13 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<jsp:useBean id="signup" class="homepage.beans.Signup" />
+<jsp:useBean id="signup" class="homepage.beans.Signup" scope="request" />
 <jsp:setProperty property="*" name="signup" />
 
 <%
 	if(signup.validateData())
 		if(signup.createUser())
-			// TODO - Redirect user to a page which confirms creation. Maybe just a popup.
+			// TODO
+			// Redirect user to a page which confirms creation. Maybe just a popup.
 			// Maybe the user should be allowed to log in, 
 			// but get a message which denies any control before being accepted.
 %>
@@ -16,7 +17,7 @@
 
 <div id="content">
 <div id="contentHeader">
-   	<h1>Velkommen til Vindinge Støtteforening</h1>
+   	<h1>Oprettelse af bruger</h1>
        <p>Læs og forstå hvordan du tilmelder dig <a href="#">her</a>.</p>
    </div>
    <div id="contentCenter">
