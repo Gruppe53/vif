@@ -188,6 +188,7 @@ td {
 }
 
 .shiftingTable {
+	width: 100%;
 	border-collapse: collapse;
 	border-spacing: 0px;
 }
@@ -195,6 +196,9 @@ td {
 /* PSEUDOs */
 #content p, h1, h2 {
 	margin-bottom: 10px;
+}
+#content table {
+	margin-bottom: 20px;
 }
 #content h2 {
 	border-bottom: #CCC 1px dashed;
@@ -239,4 +243,8 @@ td {
 }
 .shiftingTable td:first-child {
 	border-left: none;
+}
+.shiftingTable img {
+	width: 12px;
+	height: 12px;
 }

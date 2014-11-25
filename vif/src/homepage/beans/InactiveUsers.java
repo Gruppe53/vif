@@ -1,36 +1,19 @@
 package homepage.beans;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.Writer;
 
-public class AcceptUser {	
-	public AcceptUser() {
+public class InactiveUsers extends Users {
+	public InactiveUsers() {
 	}
 	
-	public boolean acceptUser(String email) {
-		System.out.println(email);
-		// TODO
-		// If clicking accept (y) -> create instance of db conn
-		// Update user to active/accepted
-		// Return true if succeeding with sql update, false otherwise
-		return false;
-	}
-	
-	public boolean deleteUser(String email) {
-		System.out.println(email);
-		// TODO
-		// If clicking delete (n) -> create instance of db conn
-		// Delete user
-		// Return true if succeeding with sql delete, false otherwise
-		return false;
-	}
-	
+	@Override
 	public void createUserList(Writer out) throws IOException {
 		// TODO
 		// Get data from DB
 		// Links should be: 
-		// <a href="?acceptuser=getEmailFromDb">
-		// <a href="?deleteuser=getEmailFromDb">
-		// If list is empty, print "Ingen nye brugertilmeldinger."
+		// <a href="?reactivate=getEmailFromDb">
+		// If list is empty, print "Ingen brugere i databasen."
 		out.write("<tr>");
 		out.write("<td>Email</td>");
 		out.write("<td>Navn</td>");
@@ -53,7 +36,7 @@ public class AcceptUser {
 		out.write("<td>Søborg</td>");
 		out.write("<td>Danmark</td>");
 		out.write("<td>Nej</td>");
-		out.write("<td><a href=\"#\">y</a> | <a href=\"#\">n</a></td>");
+		out.write("<td><a href=\"#\"><img src=\"image/up.png\" alt=\"Reaktiver bruger\" /></a></td>");
 		out.write("</tr>");
 		out.write("<tr>");
 		out.write("<td>larspeter94@gmail.com</td>");
@@ -65,7 +48,7 @@ public class AcceptUser {
 		out.write("<td>Søborg</td>");
 		out.write("<td>Danmark</td>");
 		out.write("<td>Nej</td>");
-		out.write("<td><a href=\"#\">y</a> | <a href=\"#\">n</a></td>");
+		out.write("<td><a href=\"#\"><img src=\"image/up.png\" alt=\"Reaktiver bruger\" /></a></td>");
 		out.write("</tr>");
 	}
 }
