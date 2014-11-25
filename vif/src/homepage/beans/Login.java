@@ -1,52 +1,40 @@
 package homepage.beans;
 
-import javax.servlet.ServletContext;
-
 public class Login {
-	private String username;
-	private String password;
-	private boolean check = false;
+	private String username = "";
+	private String password = "";
+	private int level = 999999999;
 	private boolean isLogged = false;
 	
 	public Login() {
 	}
 	
-	public synchronized static void init(ServletContext application) {
-		// TODO
-	}
-	
-	public boolean isLogged() {
-		// TODO
-		// Check if already logged
-		if(check)
-			return false;
-		
-		return isLogged;
-	}
-	
 	public void tryLogin() {
-		if (!check)
+		if(this.isLogged)
 			return;
 		
-		this.isLogged = false;
-	    this.check = false;
-	    
-	    if(username.length() > 0 && password.length() > 0) {
-	    	try {
-	    		// TODO
-	    		// Get users from db - use username and password as WHERE clauses
-	    		// If the returned resultset has any values -> set session logged to true
-	    		
-	    		this.isLogged = true; // korrekt! Brugeren er logget ind.
-	    	} catch (Exception e) {
-	    		e.printStackTrace();
-	    	}
-	    }
+		if(username != null && password != null) {
+		    if(username.length() > 0 && password.length() > 0) {
+		    	try {
+		    		// TODO
+		    		// Get users from db - use username and password as WHERE clauses
+		    		// If the returned resultset has any values -> set session logged to true
+		    		
+		    		this.isLogged = true;	// For now...
+		    		this.level = 1;		// For now...
+		    	} catch (Exception e) {
+		    		e.printStackTrace();
+		    	}
+		    }
+		}
 	}
 	
 	public void tryLogout() {
 		try {
 			this.isLogged = false;
+			this.username = "";
+			this.password = "";
+			this.level = 999999999;
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -67,16 +55,20 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public boolean isCheck() {
-		return check;
-	}
-
-	public void setCheck(boolean check) {
-		this.check = check;
+	
+	public boolean isLogged() {
+		return isLogged;
 	}
 
 	public void setLogged(boolean isLogged) {
 		this.isLogged = isLogged;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 }
