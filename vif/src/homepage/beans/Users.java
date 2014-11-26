@@ -1,9 +1,13 @@
 package homepage.beans;
 
+import homepage.database.DBAccess;
+
 import java.io.*;
 
 public abstract class Users {
 	public abstract void createUserList(Writer out) throws IOException;
+	
+	protected DBAccess dba = null;
 	
 	public boolean deactivateUser(String email) {
 		System.out.println(email);

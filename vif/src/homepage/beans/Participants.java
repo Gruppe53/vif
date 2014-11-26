@@ -1,10 +1,16 @@
 package homepage.beans;
 
+import homepage.database.*;
+import homepage.types.Participant;
+import homepage.types.ParticipantBid;
+
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 
 public class Participants extends Users {
 	private String year;
+	private DBAccess dba = null;
 	
 	public Participants() {
 		getActiveYear();
@@ -20,11 +26,10 @@ public class Participants extends Users {
 
 	@Override
 	public void createUserList(Writer out) throws IOException {
-		// TODO
-			// Get data from DB
-			// Links should be: 
-			// <a href="removebid?fid=getFormIdFromDb">
-			// If list is empty, print "Ingen bud i databasen."
+		try {
+			dba = DBAccess.getConnection("parti");
+			ArrayList<Participant> participants = (ArrayList<Participant>) dba.getAll();
+			
 			out.write("<tr>");
 			out.write("<td>Email</td>");
 			out.write("<td>Navn</td>");
@@ -36,25 +41,30 @@ public class Participants extends Users {
 			out.write("<td></td>");
 			out.write("</tr>");
 			out.write("<tr>");
-			out.write("<td>maagenator@gmail.com</td>");
-			out.write("<td>Kristin Hansen</td>");
-			out.write("<td>1: 00.00-04.00</td>");
-			out.write("<td>1: 12.00-16.00</td>");
-			out.write("<td>2: 16.00-20.00</td>");
-			out.write("<td>Ingen</td>");
-			out.write("<td>1: 20.00-00.00</td>");
-			out.write("<td><a href=\"javascript:if(confirm('Er du sikker på at du vil fjerne bud til vagtplan med email: #indsætEmail?'))location='?removebid=test@mail.dk';\"><img src=\"image/delete.png\" alt=\"Fjern bud til vagtplan\" /></a></td>");
-			out.write("</tr>");
-			out.write("<tr>");
-			out.write("<td>larspeter94@gmail.com</td>");
-			out.write("<td>Lars Peter Jensen</td>");
-			out.write("<td>1: 00.00-04.00</td>");
-			out.write("<td>3: 12.00-16.00</td>");
-			out.write("<td>5: 12.00-16.00</td>");
-			out.write("<td>Ingen</td>");
-			out.write("<td>2: 00.00-04.00</td>");
-			out.write("<td><a href=\"javascript:if(confirm('Er du sikker på at du vil fjerne bud til vagtplan med email: #indsætEmail?'))location='?removebid=test@mail.dk';\"><img src=\"image/delete.png\" alt=\"Fjern bud til vagtplan\" /></a></td>");
-			out.write("</tr>");
+			
+			for(int i = 0; i < participants.size(); i++) {
+				ArrayList<ParticipantBid> bidList = participants.get(i).getBidList();
+				
+				out.write("<td>"+ participants.get(i).getEmail() +"</td>");
+				out.write("<td>"+ participants.get(i).getFname() +" " + participants.get(i).getLname() +"</td>");
+				
+				for(ParticipantBid p : bidList) {
+					if(p.getWeight() == 1)
+						out.write("<td>"+ p.getFestival_day() +": "+ p.getStart_time() +"-"+ p.getEnd_time() +"</td>");
+					if(p.getWeight() == 2)
+						out.write("<td>"+ p.getFestival_day() +": "+ p.getStart_time() +"-"+ p.getEnd_time() +"</td>");
+					if(p.getWeight() == 3)
+						out.write("<td>"+ p.getFestival_day() +": "+ p.getStart_time() +"-"+ p.getEnd_time() +"</td><td>Ingen</td>");
+					if(p.getWeight() == 5)
+						out.write("<td>"+ p.getFestival_day() +": "+ p.getStart_time() +"-"+ p.getEnd_time() +"</td>");
+				}
+				
+				out.write("<td><a href=\"javascript:if(confirm('Er du sikker på at du vil fjerne bud til vagtplan med email: "+ participants.get(i).getEmail() +"?'))location='?removebid="+ participants.get(i).getF_id() +"';\"><img src=\"image/delete.png\" alt=\"Fjern bud til vagtplan\" /></a></td>");
+				out.write("</tr>");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getYear() {

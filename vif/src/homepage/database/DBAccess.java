@@ -1,26 +1,31 @@
 package homepage.database;
 
-import java.sql.*;
+import homepage.types.VifType;
 
-/**
- * DBAccess
- * @author anders
- * The class you need to import if you need your class to get or set information in the database.
- */
+import java.sql.SQLException;
+import java.util.*;
+
 public abstract class DBAccess {
-	private static Connection connect					= null;
-	private Statement statement					= null;
-	private ResultSet resultSet					= null;
-
-	private static DBAccess instans;
+	private static DBAccess dbinstance;
 	
-	abstract public Users getUser(String email) throws Exception;	
+	abstract public List<?> getAll() throws SQLException;
+	abstract public VifType getSpecific(String clause) throws SQLException;
+	abstract public boolean updateSpecific(ArrayList<String> data) throws Exception;
+	abstract public boolean deleteSpecific(String clause) throws Exception;
 	
-	synchronized public static DBAccess getConnection() throws Exception{
-		if (instans != null) return instans;
+	synchronized public static DBAccess getConnection(String type) throws Exception {
+		switch(type) {
+			case "parti":
+				dbinstance = new DBParticipantAcccess();
+				break;
+			case "archive":
+				dbinstance = new DBArchiveAccess();
+				break;
+			case "user":
+				dbinstance = new DBUserAccess();
+				break;
+		}
 		
-		instans = new DBOracle();
-		
-		return instans;
+		return dbinstance;
 	}
 }
