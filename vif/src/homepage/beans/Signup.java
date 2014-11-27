@@ -1,4 +1,7 @@
 package homepage.beans;
+import homepage.database.DBAccess;
+import homepage.database.DBInterface;
+
 import java.util.regex.*;
 
 
@@ -17,6 +20,7 @@ public class Signup {
 	private String nation;
 	private boolean public_email;
 	
+	
 	public Signup() {
 	}
 	
@@ -27,8 +31,14 @@ public class Signup {
 		// db connection should return true or false - return this to jsp-page.
 		
 		if(validateData() == false) return false; 
-		
-		
+		if(validateData()){
+			try{
+				DBAccess.getConnection("user");	
+			} catch(Exception e) {
+				System.out.println(e);
+			}
+			
+		}
 		
 		
 		return false;
