@@ -40,7 +40,9 @@ public class DBParticipantAcccess extends DBAccess {
 		List<Participant> participants = new ArrayList<Participant>();
 		
 		stmt = conn.createStatement();
-		rs = stmt.executeQuery("SELECT * FROM users JOIN user_levels ON users.fk_u_level_id = user_levels.user_level_id JOIN shift_bids ON users.email = shift_bids.fk_email");
+		rs = stmt.executeQuery("SELECT * FROM users "
+				+ "JOIN user_levels ON users.fk_u_level_id = user_levels.user_level_id "
+				+ "JOIN shift_bids ON users.email = shift_bids.fk_email");
 		
 		while(rs.next()) {
 			participants.add(
@@ -67,7 +69,13 @@ public class DBParticipantAcccess extends DBAccess {
 		}
 		
 		for(int i = 0; i < participants.size(); i++) {
-			pstmt = conn.prepareStatement("SELECT * FROM shift_wish JOIN period ON shift_wish.fk_p_id = period.p_id WHERE fk_f_id = ? AND fk_festival_year IN (SELECT MAX(festival_year) FROM `schedule` WHERE active = 1) ORDER BY weight ASC");
+			pstmt = conn.prepareStatement("SELECT * FROM shift_wish "
+					+ "JOIN period ON shift_wish.fk_p_id = period.p_id "
+					+ "WHERE fk_f_id = ? "
+					+ "AND fk_festival_year IN "
+					+ "(SELECT MAX(festival_year) FROM `schedule` "
+					+ "WHERE active = 1) "
+					+ "ORDER BY weight ASC");
 			pstmt.setInt(1, participants.get(i).getF_id());
 			
 			rs = pstmt.executeQuery();
