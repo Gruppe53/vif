@@ -30,8 +30,10 @@ public class Signup {
 		// Convert bena data to corresponding db type and send data to db connection and let it work
 		// db connection should return true or false - return this to jsp-page.
 		
-		if(validateData() == false) return false; 
-		if(validateData()){
+		if(!validateData()){
+			return false; 
+		}
+		else{
 			try{
 				DBAccess.getConnection("user");	
 			} catch(Exception e) {
@@ -48,18 +50,42 @@ public class Signup {
 		// TODO
 		// Validate current fields.
 		// Return true if successfull, otherwise false. As long as validateData returns false createUser can't be run.
-		if(this.email.contentEquals("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}") == false){ return false; }
-		if(this.repeat_email.equals(this.email) == false){ return false; }
-		if(this.password.contentEquals("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}") == false){ return false; }
-		if(this.repeat_password.equals(this.password) == false) {return false;}
-		if(this.fname.contentEquals("[a-zA-ZÆØÅæøå ]") == false || this.fname.length() > 50 ) {return false;}
-		if(this.lname.contentEquals("([a-zA-ZÆØÅæøå])") == false) {return false;}
-		if(this.birthday.contentEquals("[0-9]{8}") == false) {return false;} //TODO skal den birthday være på den 6 eller den 8 cifre !?
-		if(this.phone.contentEquals("[0-9]{8,15}") == false) {return false;}
-		if(this.address.contentEquals("[a-zA-ZÆØÅæøå0-9., ]") == false) {return false;}
-		if(this.zip.contentEquals("[0-9]{4,10}") == false || this.zip.length() > 10) {return false;}
-		if(this.city.contentEquals("[a-zA-ZæøåÆØÅ. ]") == false) {return false;}
-//		if(this.nation.contentEquals("[a-zA-ZæøåÆØÅ ]") == false || this.nation.length() > 50) {return false;}
+		if(!this.email.contentEquals("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}")){ 
+			return false;
+		}
+		if(!this.repeat_email.equals(this.email)){
+			return false;
+		}
+		if(!this.password.contentEquals("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")){
+			return false;
+		}
+		if(!this.repeat_password.equals(this.password)){
+			return false;
+		}
+		if(!this.fname.contentEquals("[a-zA-ZÃ†Ã˜Ã…Ã¦Ã¸Ã¥ ]") || this.fname.length() > 50 ){
+			return false;
+		}
+		if(!this.lname.contentEquals("([a-zA-ZÃ†Ã˜Ã…Ã¦Ã¸Ã¥])")){
+			return false;
+		}
+		if(!this.birthday.contentEquals("[0-9]{8}")){
+			return false;
+		} //TODO skal den birthday vï¿½re pï¿½ den 6 eller den 8 cifre !?
+		if(!this.phone.contentEquals("[0-9]{8,15}")){
+			return false;
+		}
+		if(!this.address.contentEquals("[a-zA-ZÃ†Ã˜Ã…Ã¦Ã¸Ã¥0-9., ]")){
+			return false;
+		}
+		if(!this.zip.contentEquals("[0-9]{4,10}") || this.zip.length() > 10){
+			return false;
+		}
+		if(!this.city.contentEquals("[a-zA-ZÃ†Ã˜Ã…Ã¦Ã¸Ã¥. ]")){
+			return false;
+		}
+//		if(!this.nation.contentEquals("[a-zA-ZÃ†Ã˜Ã…Ã¦Ã¸Ã¥ ]") || this.nation.length() > 50){
+//		 return false;
+//		}
 		return true;
 	}
 	
