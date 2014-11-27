@@ -1,9 +1,6 @@
 package homepage.beans;
+
 import homepage.database.DBAccess;
-import homepage.database.DBInterface;
-
-import java.util.regex.*;
-
 
 public class Signup {
 	private String email;

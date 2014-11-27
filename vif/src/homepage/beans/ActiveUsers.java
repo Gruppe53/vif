@@ -1,7 +1,7 @@
 package homepage.beans;
 
+import homepage.data.User;
 import homepage.database.*;
-import homepage.types.User;
 
 import java.io.IOException;
 import java.io.Writer;

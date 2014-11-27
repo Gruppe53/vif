@@ -1,4 +1,4 @@
-package homepage.types;
+package homepage.data;
 
 public class Festival extends VifType {
 	private int year;

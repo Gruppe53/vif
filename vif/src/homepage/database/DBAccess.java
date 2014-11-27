@@ -1,6 +1,6 @@
 package homepage.database;
 
-import homepage.types.VifType;
+import homepage.data.VifType;
 
 import java.sql.SQLException;
 import java.util.*;

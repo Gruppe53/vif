@@ -1,7 +1,7 @@
 package homepage.beans;
 
+import homepage.data.User;
 import homepage.database.DBAccess;
-import homepage.types.User;
 
 import java.io.*;
 import java.text.DateFormat;

@@ -1,6 +1,6 @@
 package homepage.database;
 
-import homepage.types.User;
+import homepage.data.User;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;

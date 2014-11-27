@@ -1,6 +1,6 @@
 package homepage.database;
 
-import homepage.types.Festival;
+import homepage.data.Festival;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

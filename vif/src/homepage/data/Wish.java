@@ -1,4 +1,4 @@
-package homepage.types;
+package homepage.data;
 
 import java.util.Date;
 

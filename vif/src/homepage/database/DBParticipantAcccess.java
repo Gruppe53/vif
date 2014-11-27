@@ -1,6 +1,6 @@
 package homepage.database;
 
-import homepage.types.*;
+import homepage.data.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,8 +1,8 @@
 package homepage.beans;
 
+import homepage.data.Participant;
+import homepage.data.ParticipantBid;
 import homepage.database.*;
-import homepage.types.Participant;
-import homepage.types.ParticipantBid;
 
 import java.io.IOException;
 import java.io.Writer;
