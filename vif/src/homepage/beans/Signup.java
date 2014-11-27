@@ -47,7 +47,7 @@ public class Signup {
 		// TODO
 		// Validate current fields.
 		// Return true if successfull, otherwise false. As long as validateData returns false createUser can't be run.
-		if(!this.email.contentEquals("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}")){ 
+		if(!this.email.contentEquals("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}")){
 			return false;
 		}
 		if(!this.repeat_email.equals(this.email)){

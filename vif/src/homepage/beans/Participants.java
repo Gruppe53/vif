@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class Participants extends Users {
 	private String year;
-	private DBAccess dba = null;
 	
 	public Participants() {
 		getActiveYear();
