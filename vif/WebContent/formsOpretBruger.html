@@ -14,37 +14,45 @@ $("document").ready(function(){
 		rules: {
 			email: {
 				required: true,
+				maxlength: 100,
 				email: true
 			},
 			email_repeat: {
 		     	required: true,
+		     	maxlength: 100,
 		     	equalTo: "#email"
 	   		},
 	    	fname: {
-				required: true
+				required: true,
+				maxlength: 50
 			},
 			lname: {
-				required:true
+				required: true,
+				maxlength: 50
 			},
 			birthday: {
 		   		required: true
 	    	},
 	    	address: {
-		    	required: true
+		    	required: true,
+		    	maxlength: 100
 	    	},
 	    	zip: {
 		    	required: true,
 	    		maxlength: 10
 	    	},
 	    	city: {
-		    	required: true
+		    	required: true,
+		    	maxlength: 50
 	    	},
 	    	password: {
 		    	required: true,
-	     		minlength: 6
+	     		minlength: 6,
+	     		maxlength: 40
 	    	},
 	    	password_repeat: {
 		    	required: true,
+		    	maxlength: 40,
 		    	minlength: 6,
 		    	equalTo: "#password"
 	    	}
@@ -55,7 +63,8 @@ $("document").ready(function(){
 		    email: "Indtast venligst en korrekt email-adresse.",
 		    date: "Indtast venligst en korrekt dato.",
 		    equalTo: "Dette felt skal være lig det ovenstående felt.",
-		    minlength: jQuery.validator.format("Indtast venligst mindst {0} tegn.")
+		    minlength: jQuery.validator.format("Indtast venligst mindst {0} tegn."),
+		    maxlength: jQuery.validator.format("Feltet må ikke indholde mere end {0} tegn.")
 		});
 });
 </script>
