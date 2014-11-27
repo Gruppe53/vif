@@ -1,4 +1,6 @@
 package homepage.beans;
+import java.util.regex.*;
+
 
 public class Signup {
 	private String email;
@@ -23,6 +25,12 @@ public class Signup {
 		// If validated -> create instance of db connection
 		// Convert bena data to corresponding db type and send data to db connection and let it work
 		// db connection should return true or false - return this to jsp-page.
+		
+		if(validateData() == false) return false; 
+		
+		
+		
+		
 		return false;
 	}
 	
@@ -30,7 +38,19 @@ public class Signup {
 		// TODO
 		// Validate current fields.
 		// Return true if successfull, otherwise false. As long as validateData returns false createUser can't be run.
-		return false;
+		if(this.email.contentEquals("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}") == false){ return false; }
+		if(this.repeat_email.equals(this.email) == false){ return false; }
+		if(this.password.contentEquals("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}") == false){ return false; }
+		if(this.repeat_password.equals(this.password) == false) {return false;}
+		if(this.fname.contentEquals("[a-zA-ZÆØÅæøå ]") == false || this.fname.length() > 50 ) {return false;}
+		if(this.lname.contentEquals("([a-zA-ZÆØÅæøå])") == false) {return false;}
+		if(this.birthday.contentEquals("[0-9]{8}") == false) {return false;} //TODO skal den birthday være på den 6 eller den 8 cifre !?
+		if(this.phone.contentEquals("[0-9]{8,15}") == false) {return false;}
+		if(this.address.contentEquals("[a-zA-ZÆØÅæøå0-9., ]") == false) {return false;}
+		if(this.zip.contentEquals("[0-9]{4,10}") == false || this.zip.length() > 10) {return false;}
+		if(this.city.contentEquals("[a-zA-ZæøåÆØÅ. ]") == false) {return false;}
+//		if(this.nation.contentEquals("[a-zA-ZæøåÆØÅ ]") == false || this.nation.length() > 50) {return false;}
+		return true;
 	}
 	
 	public String getEmail() {
