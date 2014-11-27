@@ -13,41 +13,48 @@ $("document").ready(function(){
 	$("form#updateUser").validate({
 		rules: {
 			fname: {
-				required: true
+				required: true,
+				maxlength: 50
 			},
 			lname: {
-				required:true
+				required: true,
+				maxlength: 50
 			},
 			birthday: {
 			     required: true
 		    },
 		    address: {
-			     required: true
+			     required: true,
+			     maxlength: 100
 		    },
 		    zip: {
 			     required: true,
 		    	 maxlength: 10
 		    },
 		    city: {
-			     required: true
+			     required: true,
+			     maxlength: 50
 		    },
 		    password: {
 			     required: true,
-		     	minlength: 6
+		     	minlength: 6,
+		     	maxlength: 40
 		    },
 		    password_repeat: {
 			     required: true,
 			     minlength: 6,
+			     maxlength: 40,
 			     equalTo: "#password"
 		    }
 		   }
 		   })
 		   jQuery.extend(jQuery.validator.messages, {
-			    required: "Dette felt skal udfyldes.",
+			   required: "Dette felt skal udfyldes.",
 			    email: "Indtast venligst en korrekt email-adresse.",
 			    date: "Indtast venligst en korrekt dato.",
 			    equalTo: "Dette felt skal være lig det ovenstående felt.",
-			    minlength: jQuery.validator.format("Indtast venligst mindst {0} tegn.")
+			    minlength: jQuery.validator.format("Feltet må ikke indholde mindre end {0} tegn."),
+			    maxlength: jQuery.validator.format("Feltet må ikke indholde mere end {0} tegn.")
 			});
 
 });
