@@ -7,7 +7,7 @@
     </div>
     <div id="contentLeft">
     	<h2>Video</h2>
-        <p><iframe width="430" height="323" src="//www.youtube.com/embed/rdUF1CBtKAY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+        <p><iframe width="430" height="323" src="//www.youtube.com/embed/C0DPdy98e4c?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
         <div class="frontLink">tilmelding</div>
     </div>
     <div id="contentRight">
