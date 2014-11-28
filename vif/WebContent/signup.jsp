@@ -311,6 +311,11 @@
                    <td style="color: #999;">Skriv dit gadenavn og -nummer - eventuelt etage og side/dørnummer.</td>
                </tr>
                <tr>
+               		<td><label for="phone">Telefon</label></td>
+               		<td><input id="phone" name="zip" type="text" /></td>
+               		<td style="color: #999;">Skriv et telefonnummer, hvor vi kan komme i kontakt med dig.</td>
+               </tr>
+               <tr>
                	<td><label for="zip">Post nr.</label></td>
                    <td><input id="zip" name="zip" type="text" /></td>
                    <td style="color: #999;">Skriv dit postnummer.</td>

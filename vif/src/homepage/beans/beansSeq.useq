@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.7" icons="true">  
+  <object id="1" language="java" name="homepage.beans.Users" project="vif" file="/vif/src/homepage/beans/Users.java" 
+    binary="false" label="users" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="162" y="0"/>    
+    <execution id="2">      
+      <position height="63" width="78" x="5" y="275"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="homepage.beans.NewUsers" project="vif" 
+    file="/vif/src/homepage/beans/NewUsers.java" binary="false" label="newUsers" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="53" y="0"/>    
+    <execution id="4">      
+      <position height="21" width="82" x="87" y="296"/>    
+    </execution>  
+  </object>  
+  <message id="3">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>
+</sequence-diagram>
